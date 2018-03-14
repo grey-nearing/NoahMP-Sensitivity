@@ -1,0 +1,82 @@
+#
+#  Options for Linux with Intel Fortran
+#
+
+ COMPILERF90	=	ifort
+ FREESOURCE	=	-free
+ CPPMACROS	=	-D_SIMPLE_DRIVER_
+ F90FLAGS	=       -convert big_endian -g -O0 -check all,noshape,nopointer,noarg_temp_created -fp-model precise -fpe0
+ CPP		=	cpp -C -P -traditional 
+ LIBS		=
+# NETCDFDIR	= /discover/nobackup/projects/lis/libs/netcdf/4.1.3_intel_13_0_1_117
+# NETCDFINC	=	-I$(NETCDFDIR)/include
+# NETCDFLIB	=	-L$(NETCDFDIR)/lib -lnetcdf -lnetcdff 
+# NCARG_ROOT	=	/usr/local/ncarg
+ RM		= 	rm -f
+ CC		=	cc
+
+#
+#  Options for Linux with g95
+#
+
+# COMPILERF90	=	g95
+# FREESOURCE	=	-ffree-form  -ffree-line-length-huge
+# CPPMACROS	=	-D_SIMPLE_DRIVER_
+# CPP		=	cpp -C -P -traditional 
+# F90FLAGS	=       -fendian=big -fno-second-underscore -g -fbounds-check -O0
+# LIBS		=
+# NETCDFDIR	=	/scholar/kmanning/netcdf-3.6.3-g95
+# NETCDFINC	=	-I$(NETCDFDIR)/include
+# NETCDFLIB	=	-L$(NETCDFDIR)/lib -lnetcdf
+# NCARG_ROOT	=	/usr/local/ncarg
+# RM		= 	rm -f
+# CC		=	cc
+
+#
+#  Options for Linux with gfortran
+#
+
+# COMPILERF90	=	gfortran
+# FREESOURCE	=	-ffree-form -ffree-line-length-none
+# F90FLAGS	=       -g -fconvert=big-endian -O0 -ffpe-trap=invalid,zero,overflow,underflow
+# CPPMACROS	=	-D__GFORTRAN__ -D_SIMPLE_DRIVER_
+# CPP		=	cpp -C -P -traditional 
+# LIBS		=
+# NETCDFDIR	=	/scholar/kmanning/netcdf-3.6.3-gfortran
+# NETCDFINC	=	-I$(NETCDFDIR)/include
+# NETCDFLIB	=	-L$(NETCDFDIR)/lib -lnetcdf
+# NCARG_ROOT      =       /usr/local/ncarg
+# RM		= 	rm -f
+# CC		=	cc
+
+#
+#  Options for Linux with pgf90
+#
+
+# COMPILERF90	=	pgf90
+# FREESOURCE	=	-Mfree
+# F90FLAGS	=       -g -byteswapio -C -O0 -Ktrap=fp
+# CPPMACROS	=	-D_SIMPLE_DRIVER_
+# CPP		=	cpp -C -P -traditional 
+# LIBS		=	-lpgf90rtl
+# NETCDFDIR	=	/usr/local/netcdf4-pgi
+# NETCDFINC	=	-I$(NETCDFDIR)/include
+# NETCDFLIB	=	-L$(NETCDFDIR)/lib -lnetcdff -lnetcdf
+# NCARG_ROOT	=	/usr/local/ncarg
+# RM		= 	rm -f
+# CC		=	cc
+
+#
+#  Options for IBM
+#
+# COMPILERF90	=	xlf90
+# FREESOURCE	=	-qfree=f90
+# CPP		=	cpp -C -P -traditional 
+# CPPMACROS	=	-D_SIMPLE_DRIVER_
+# F90FLAGS	=       -g -O0
+# LIBS		=
+# NETCDFINC	=	-I/usr/local/netcdf/include
+# NETCDFLIB	=	-L/usr/local/netcdf/lib -lnetcdf
+# NCARG_ROOT	=	/usr/local/apps/ncl-5.1.0
+# RM		= 	rm -f
+# CC		=	xlC

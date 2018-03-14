@@ -1,0 +1,50 @@
+ 
+&METADATA_NAMELIST
+ startdate             = "199801010900"
+ enddate               = "199901020000"
+ forcing_filename      = "bondville.dat"
+ output_dir            = "."
+ spin_up_while         = 0 
+ Latitude              =  40.01
+ Longitude             = -88.37
+
+ ! MP Options:
+      opt_dveg  = 2  ! Vegetation model ( 1->prescribed [table LAI, shdfac=FVEG]; 2->dynamic; 3->table LAI, calculate FVEG 4->table LAI, shdfac=maximum)
+      opt_crs   = 1  ! Canopy stomatal resistance (1-> Ball-Berry; 2->Jarvis)
+      opt_btr   = 1  ! Soil moisture factor for stomatal resistance (1-> Noah; 2-> CLM; 3-> SSiB)
+      opt_run   = 1  ! Runoff and groundwater (1->SIMGM; 2->SIMTOP; 3->Schaake96; 4->BATS)
+      opt_sfc   = 1  ! Surface layer drag coeff (CH & CM) (1->M-O; 2->Chen97)
+      opt_frz   = 1  ! Supercooled liquid water (1-> NY06; 2->Koren99)
+      opt_inf   = 1  ! Frozen soil permeability (1-> NY06; 2->Koren99)
+      opt_rad   = 1  ! Radiation transfer (1->gap=F(3D,cosz); 2->gap=0; 3->gap=1--Fveg)
+      opt_alb   = 2  ! snow surface albedo (1->BATS; 2->CLASS)
+      opt_snf   = 1  ! rainfall & snowfall (1-Jordan91; 2->BATS; 3->Noah)
+      opt_tbot  = 2  ! lower boundary of soil temperature (1->zero-flux; 2->Noah)
+      opt_stc   = 1  ! snow/soil temperature time scheme (1->semi-implicit; 2->fully implicit)
+
+ Forcing_Timestep_Second      = 1800
+ Noahlsm_Timestep_Second      = 1800
+ Sea_ice_point         = .FALSE.
+
+ Num_Soil_levels       =     4
+ Soil_layer_thickness  =    0.1            0.3            0.6            1.0        
+ Soil_Temperature      =  266.0995       274.0445       276.8954       279.9152      
+ Soil_Moisture         =  0.2981597      0.2940254      0.2713114      0.3070948
+ Soil_Liquid           =  0.1611681      0.2633106      0.2713114      0.3070948
+
+ Skin_Temperature      =  263.6909
+ Canopy_water          =  3.9353027E-04
+ Snow_depth            =  1.0600531E-03
+ Snow_equivalent       =  2.0956997E-04
+ Deep_Soil_Temperature = 285
+ Landuse_dataset       = "USGS"
+ Vegetation_type_index = 2
+ Soil_type_index       = 4
+ Urban_veg_category    = 1
+ glacial_veg_category  = 24
+ Slope_type_index      = 1
+ Air_temperature_level = 6.0
+ Wind_level            = 6.0
+ Shdfac_monthly        = 0.98,  0.98,  0.98,  0.98,  0.98,  0.98,  0.98,  0.98,  0.98,  0.98,  0.98,  0.98,  
+
+/

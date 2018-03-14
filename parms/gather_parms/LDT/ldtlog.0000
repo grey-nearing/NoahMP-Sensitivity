@@ -1,0 +1,245 @@
+ ----------------------------------
+  Start of LDT parameter processing 
+ ----------------------------------
+ local domain:(        1440         600 )
+ local domain without halo:(        1440         600 )
+ running domain:(        1440         600 )
+ local domain   -59.87500       89.87500      -179.8750       179.8750    
+ -------------------- LDT/LIS Domain ----------------------
+ (           1 ,  0.0000000E+00 )
+ (           2 ,   1440.000     )
+ (           3 ,   600.0000     )
+ (           4 ,  -59.87500     )
+ (           5 ,  -179.8750     )
+ (           6 ,   128.0000     )
+ (           7 ,   89.87500     )
+ (           8 ,   179.8750     )
+ (           9 ,  0.2500000     )
+ (          10 ,  0.2500000     )
+ (          11 ,   64.00000     )
+ (          12 ,  0.0000000E+00 )
+ (          13 ,  0.0000000E+00 )
+ ----------------------------------------------------------
+ LSM User-selected:  Noah-MP.3.6
+  - - - - - - MODEL PARAMETERS (NOT Selected) - - - - - - - 
+ Regional mask data source: not defined
+ WARNING: Soil fraction data source: not defined
+ Slope data source: not defined
+ Aspect data source: not defined
+ PPT climatology data source: not defined
+  -- Opening LDT Mask-Parameter Fill log file -- 
+  - - - - - - -  SURFACE TYPES  - - - - - - - - 
+ Initializing and Summing Surface Types 
+  ... Surface types selected: 
+  ... LSM       
+ Finished initializing surface types
+  - - - - - - - - - Landcover/Landmask Parameters - - - - - - - - - - -
+  -- 'NONE' Parameter-Mask Agreement Option Selected for Landcover
+ Param_Check: Vegetation tiles are being created ...
+ Reading landcover values
+ MSG: Reading landcover file: ./input/LS_PARAMETERS/noah_2dparms/igbp.bin
+ MSG: Done reading ./input/LS_PARAMETERS/noah_2dparms/igbp.bin
+ #Regridding: Applying tiling to input parameter
+ MSG: LAT/LON -- Creating mask output
+ MSG: SURFACETYPE -- Assigning landcover surface types
+ Finished assigning LSM surface types
+ Finished reading landmask and landcover data
+  - - - - - - - - - - Soils Parameters - - - - - - - - - - - - - -
+ Param_Check: Dominant (mode) soil texture class being selected ...
+ MSG: Reading Native STATSGO+FAO texture file: 
+ ./input/LS_PARAMETERS/noah_2dparms/topsoil30snew
+ #Regridding: Applying mode to input parameter
+ MSG: Done reading Native STATSGO+FAO texture file
+ Checking/filling mask values for: TEXTURE
+  - - - - - - - - - Greenness Fraction Parameters - - - - - - - - -
+ Param_Check: Estimate bilinearly interpolated greenness fraction values ...
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_jan.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_jan.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_feb.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_feb.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_mar.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_mar.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_apr.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_apr.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_may.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_may.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_jun.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_jun.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_jul.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_jul.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_aug.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_aug.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_sep.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_sep.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_oct.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_oct.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_nov.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_nov.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_dec.asc
+ MSG: Reading NCEP Native Monthly Greenness 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/gfrac_dec.asc
+ Checking/filling mask values for: GREENNESS
+ MSG: Reading NCEP Native greenness max file: 
+ ./input/LS_PARAMETERS/noah_2dparms/gfrac_max.asc
+ #Regridding: Applying bilinear interp to input parameter
+ MSG: Done reading NCEP Native greenness max file.
+ Checking/filling mask values for: SHDMAX
+ MSG: Reading NCEP Native greenness min file: 
+ ./input/LS_PARAMETERS/noah_2dparms/gfrac_min.asc
+ #Regridding: Applying bilinear interp to input parameter
+ MSG: Done reading NCEP Native greenness min file. 
+ Checking/filling mask values for: SHDMIN
+  - - - - - - - - - - Albedo Parameters - - - - - - - - - - - - -
+ Param_Check: Estimate conservative interpolated max snow alb values ...
+ Reading ./input/LS_PARAMETERS/noah_2dparms/maxsnoalb.asc
+ MSG: Reading NCEP Native max snow albedo file: 
+ ./input/LS_PARAMETERS/noah_2dparms/maxsnoalb.asc
+ #Regridding: Applying budget-bilinear interp to input parameter
+ MSG: Done reading native max snow alb file
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/maxsnoalb.asc
+ Checking/filling mask values for: MXSNALBEDO
+ Param_Check: Estimate bilinearly interpolated snow-free albedo values ...
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_jan.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_jan.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_feb.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_feb.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_mar.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_mar.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_apr.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_apr.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_may.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_may.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_jun.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_jun.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_jul.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_jul.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_aug.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_aug.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_sep.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_sep.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_oct.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_oct.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_nov.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_nov.asc
+ Reading ./input/LS_PARAMETERS/noah_2dparms/albedo_dec.asc
+ MSG: Reading NCEP Native Monthly Albedo 
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading ./input/LS_PARAMETERS/noah_2dparms/albedo_dec.asc
+ Checking/filling mask values for: ALBEDO
+  - - - - - - - - - Topographic Parameters - - - - - - - - - - - -
+ Param_Check: Average topographic values to be calculated ...
+ Reading Native SRTM elevation files, found in directory: 
+ ./input/LS_PARAMETERS/topo_parms/SRTM/SRTM30/raw
+ #Regridding: Applying average to input parameter
+ MSG: Done reading Native SRTM elevation files.
+ Checking/filling mask values for: ELEVATION
+  - - - - - - - - - Slope Type Parameter - - - - - - - - - - - -
+ Param_Check: Estimate neareast neighbor slope type values ...
+ MSG: Reading NCEP Native slopetype file: 
+ ./input/LS_PARAMETERS/noah_2dparms/islope
+ #Regridding: Applying nearest neighbor to input parameter
+ MSG: Done reading native slope type file
+ Checking/filling mask values for: SLOPETYPE
+  - - - - - - - - - Bottom Temperature Parameter - - - - - - - - - - - -
+ Param_Check: Estimate bilinearly interpolated bottom temperature values ...
+ MSG: Reading ISCLSP1 (1.0 deg res) Native Bottom Temperature file: 
+ ./input/LS_PARAMETERS/noah_2dparms/SOILTEMP.60
+ #Regridding: Applying bilinear interp to input parameter
+ Checking/filling mask values for: TBOT
+ Performing lapse-rate correction to Tbot output.
+  - - - - - - - - - Noah-MP Parameters - - - - - - - - - - - -
+  - - - - - - - - Meteorological Parameters - - - - - - - -
+ Reading the GDAS forcing data
+ MSG: Initializing GDAS grid-1 for: 1991-2000 grid (T126)
+ MSG: Initializing GDAS grid-2 for: 2000-2002 grid (T170)
+ MSG: Initializing GDAS grid-3 for: 2002-2005 grid (T254)
+ MSG: Initializing GDAS grid-4 for: 2005-2010 grid (T382)
+ MSG: Initializing GDAS grid-5 for: 2010-2015 grid (T574)
+ MSG: Initializing GDAS grid-6 for: 2015-present grid (T1534)
+  Projection and Transform: gaussian, bilinear
+ Reading forcing elev for GDAS_T126
+ Opening/reading GDAS elev file:: 
+ ./input/LS_PARAMETERS/metforcing_parms/GDAS/global_orography.t126.grb
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading forcing elevation field. 
+  Projection and Transform: gaussian, bilinear
+ Reading forcing elev for GDAS_T170
+ Opening/reading GDAS elev file:: 
+ ./input/LS_PARAMETERS/metforcing_parms/GDAS/global_orography.t170.grb
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading forcing elevation field. 
+  Projection and Transform: gaussian, bilinear
+ Reading forcing elev for GDAS_T254
+ Opening/reading GDAS elev file:: 
+ ./input/LS_PARAMETERS/metforcing_parms/GDAS/global_orography.t254.grb
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading forcing elevation field. 
+  Projection and Transform: gaussian, bilinear
+ Reading forcing elev for GDAS_T382
+ Opening/reading GDAS elev file:: 
+ ./input/LS_PARAMETERS/metforcing_parms/GDAS/global_orography.t382.grb
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading forcing elevation field. 
+  Projection and Transform: gaussian, bilinear
+ Reading forcing elev for GDAS_T574
+ Opening/reading GDAS elev file:: 
+ ./input/LS_PARAMETERS/metforcing_parms/GDAS/global_orography.t574.grb
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading forcing elevation field. 
+  Projection and Transform: gaussian, bilinear
+ Reading forcing elev for GDAS_T1534
+ Opening/reading GDAS elev file:: 
+ ./input/LS_PARAMETERS/metforcing_parms/GDAS/global_orography_uf.t1534.3072.1536
+ .grb
+ #Regridding: Applying bilinear interp to input parameter
+ Done reading forcing elevation field. 
+  
+ -- Finished writing parameters to netcdf output file -- 
+ --------------------------------
+  Finished LDT run 
+ --------------------------------
