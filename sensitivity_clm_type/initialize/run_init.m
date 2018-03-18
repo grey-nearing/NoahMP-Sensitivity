@@ -2,7 +2,6 @@ clear all
 close all
 clc
 
-
 dir = '/discover/nobackup/gnearing/projects/PALS_SysID/';
 sites = load(strcat(dir,'site_data/Sites.txt'));
 Ns = length(sites);

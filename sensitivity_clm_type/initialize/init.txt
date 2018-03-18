@@ -3,7 +3,7 @@
 6	                   # setup%zlvl      
 1800	                   # setup%dt        
 1	                   # setup%opt_crs   
-1	                   # setup%opt_btr   
+2	                   # setup%opt_btr   
 1	                   # setup%opt_run   
 1	                   # setup%opt_sfc   
 1	                   # setup%opt_frz   

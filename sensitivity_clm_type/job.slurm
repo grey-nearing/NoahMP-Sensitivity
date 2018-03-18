@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 #SBATCH --job-name=clm1
-#SBATCH --output=clm.report
+#SBATCH --output=slurm.report
 #SBATCH --time=12:00:00
 #SBATCH --ntasks=36
 #SBATCH --account=s1688

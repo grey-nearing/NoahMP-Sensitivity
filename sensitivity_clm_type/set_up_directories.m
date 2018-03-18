@@ -10,56 +10,56 @@ Ns = length(sites);
 
 for s = 1:Ns
 
- cmd = strcat('mkdir run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
+ cmd = strcat('mkdir runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
  system(cmd);
 
- fname = strcat('run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/nstart.txt');
+ fname = strcat('runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/nstart.txt');
  fid = fopen(fname,'w');
  fprintf(fid,'%d',1);
  fclose(fid);
 
- fname = strcat('run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/hvt.txt');
+ fname = strcat('runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/hvt.txt');
  fid = fopen(fname,'w');
  fprintf(fid,'%d',HVT(vegtypes(sites(s,1))));
  fclose(fid);
 
- cmd = strcat('cp ./setup_dir/main.exe run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
+ cmd = strcat('cp ./setup_dir/main.exe runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
  system(cmd);
 
- cmd = strcat('cp ./setup_dir/*.m run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
+ cmd = strcat('cp ./setup_dir/*.m runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
  system(cmd);
 
- cmd = strcat('cp ./setup_dir/run_matlab.sh run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
+ cmd = strcat('cp ./setup_dir/run_matlab.sh runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
  system(cmd);
 
- cmd = strcat('cp ./setup_dir/da_flag.txt run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
+ cmd = strcat('cp ./setup_dir/da_flag.txt runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
  system(cmd);
 
- cmd = strcat('cp ./setup_dir/init.txt run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
+ cmd = strcat('cp ./setup_dir/init.txt runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)));
  system(cmd);
 
- cmd = strcat('cp ../site_data/site_data/obs_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt ./','run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/obs.txt');
+ cmd = strcat('cp ../site_data/site_data/obs_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt ./','runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/obs.txt');
  system(cmd);
  
- cmd = strcat('cp ../parms/extract_parms/site_data/parms_',num2str(sites(s,1)),'.txt ./','run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/parms.txt');
+ cmd = strcat('cp ../parms/extract_parms/site_data/parms_',num2str(sites(s,1)),'.txt ./','runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/parms.txt');
  system(cmd);
  
- cmd = strcat('cp ../parms/extract_parms/site_data/parms_',num2str(sites(s,1)),'.txt ./','run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/parms_original.txt');
+ cmd = strcat('cp ../parms/extract_parms/site_data/parms_',num2str(sites(s,1)),'.txt ./','runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/parms_original.txt');
  system(cmd);
  
- cmd = strcat('cp ../parms/extract_parms/site_data/time_parms_',num2str(sites(s,1)),'.txt ./','run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/time_parms_original.txt');
+ cmd = strcat('cp ../parms/extract_parms/site_data/time_parms_',num2str(sites(s,1)),'.txt ./','runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/time_parms_original.txt');
  system(cmd);
 
- cmd = strcat('cp ../site_data/site_data/forcing_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt ./','run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/forcing.txt');
+ cmd = strcat('cp ../site_data/site_data/forcing_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt ./','runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/forcing_1.txt');
  system(cmd);
 
- a = load(strcat('run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/forcing.txt'));
+ a = load(strcat('runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/forcing_1.txt'));
  Nt = length(a);
- save(strcat('run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/num_times.txt'),'Nt','-ascii');
+ save(strcat('runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/num_times.txt'),'Nt','-ascii');
 
  ll = load(strcat('../site_data/Sites.txt'));
  ll = ll(sites(s,1),1:2); ll = ll(:);
- save(strcat('run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/lat_lon.txt'),'ll','-ascii');
+ save(strcat('runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/lat_lon.txt'),'ll','-ascii');
 
 % startdate
  offset = load(strcat('../site_data/Sites.txt'));
@@ -70,15 +70,15 @@ for s = 1:Ns
    startdate = 200101011200 - (12-offset)*100;
  end
  startdate = num2str(startdate);
- fname = strcat('run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/startdate.txt');
+ fname = strcat('runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/startdate.txt');
  fid = fopen(fname,'w');
  fprintf(fid,'%s',startdate);
  fclose(fid);
 
- cmd = strcat('cp ./initialize/site_data/soil_init_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/soil_init.txt');
+ cmd = strcat('cp ./initialize/site_data/soil_init_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/soil_init.txt');
  system(cmd);
 
- cmd = strcat('cp ./initialize/site_data/plant_init_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/plant_init.txt');
+ cmd = strcat('cp ./initialize/site_data/plant_init_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'.txt runtime_dirs/run_',num2str(sites(s,1)),'_',num2str(sites(s,2)),'/plant_init.txt');
  system(cmd);
 
 end

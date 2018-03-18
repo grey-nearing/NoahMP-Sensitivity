@@ -2,12 +2,13 @@
 
 FC  = ifort
 LIBS = -L${MKLROOT}/lib -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core  -liomp5 -lpthread
-LDFLAGS = -O3 -xHost -ipo -fpp
+#LDFLAGS = -O3 -xHost -ipo -fpp
+LDFLAGS = -O3 -xHost -xAVX -axCORE-AVX2 -ipo -fpp
 #LDFLAGS = -fpp 
 #FFLAGS =  -g -O0 -traceback 
 
-#EXEFILE = ../run_da/main.exe
 EXEFILE = main.exe
+#EXEFILE = main.exe
 MODOBJS = type_decs.o module_model_constants.o module_sf_noahlsm.o kwm_date_utilities.o module_sf_noahutl.o module_sf_noahmplsm.o 
 
 MODSRCS = ./src/type_decs.f90 ./src/module_model_constants.f90 ./src/module_sf_noahlsm.f90 ./src/kwm_date_utilities.f90 ./src/module_sf_noahutl.f90 ./src/module_sf_noahmplsm.f90 

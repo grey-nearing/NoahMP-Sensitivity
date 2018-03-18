@@ -35,7 +35,6 @@ try
 
  fname = strcat('./output.out');
  y = load(fname);
- y = y(:,[19,20,11,12,21]);
 
  for d = 1:5
   if length(I{d}>5000)
