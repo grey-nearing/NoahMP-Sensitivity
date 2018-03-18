@@ -22,6 +22,8 @@ program run_timestep
  real    :: dummy
  integer :: vegtyp
  logical :: fexists
+ integer, allocatable, dimension(:) :: year, doy
+ real, allocatable, dimension(:) :: hour
  
  ! model data
  type(forcing_data), allocatable, dimension(:,:) :: forcing
@@ -77,6 +79,9 @@ program run_timestep
 
  ! forcing from file
  allocate(forcing(Nt,Ne))
+ allocate(year(Nt))
+ allocate(doy(Nt))
+ allocate(hour(Nt))
  do e = 1,Ne
 
   ! don't want to use more than 50 forcing inputs
@@ -100,7 +105,7 @@ program run_timestep
 
   do t = 1,Nt
    ! the humidity here is kg/kg, not % and not relative humidity.
-   read(fid,*) dummy,dummy,dummy,forcing(t,e)%sfcspd,dummy,   &
+   read(fid,*) year(t),doy(t),hour(t),forcing(t,e)%sfcspd,dummy,   &
                forcing(t,e)%sfctmp,forcing(t,e)%q2,           &
                forcing(t,e)%sfcprs,forcing(t,e)%swrad,        &
                forcing(t,e)%lwrad,forcing(t,e)%prcprate
@@ -146,7 +151,7 @@ program run_timestep
   fname = 'obs.txt'
   open(fid,file=trim(fname))
    do t = 1,Nt
-    read(fid,*) dummy,dummy,dummy,dummy,obs(t,:),sig(t,:) 
+    read(fid,*) dummy,dummy,dummy,obs(t,:),sig(t,:) 
    enddo
   close(fid)
 
@@ -352,8 +357,12 @@ program run_timestep
    open(fid,file=trim(fname),status='replace')
 
    do t = 1,Nt
-    write(fid,'(f17.6, f17.6, f17.6, f17.6, f17.6)')  & 
-     output(t,e)%Qe, output(t,e)%Qh, state(t,e)%smc(1), state(t,e)%smc(2), output(t,e)%NEE 
+    write(fid,'(i4,4x,i3,2x,f5.1, &
+                f17.6, f17.6, f17.6, f17.6, f17.6, f17.6 f17.6, &
+                f17.6, f17.6, f17.6, f17.6)')  & 
+     year(t),doy(t),hour(t),    &
+     output(t,e)%Qe, output(t,e)%Qh, state(t,e)%smc, output(t,e)%NEE, &
+     state(t,e)%rtmass, state(t,e)%wood, state(t,e)%lfmass, state(t,e)%stmass  
    enddo ! time
 
    close(fid) ! ensemble file

@@ -1,6 +1,6 @@
 How To Run:
 
-1) Compile Noah-MP model. 
+1) Compile Noah-MP model:
 	1a) Need a ifort compiler. On NCCS Discover, this can be accessed by sourcing the <environment_setup.sh> file. Note that this purges all modules and changes $PATH.
 	1b) In the <model_src> sibdirectory run 'make clean' and 'make'.
 

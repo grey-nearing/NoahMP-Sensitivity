@@ -2,7 +2,6 @@
 
 FC  = ifort
 LIBS = -L${MKLROOT}/lib -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core  -liomp5 -lpthread
-#LDFLAGS = -O3 -xHost -ipo -fpp
 LDFLAGS = -O3 -xHost -xAVX -axCORE-AVX2 -ipo -fpp
 #LDFLAGS = -fpp 
 #FFLAGS =  -g -O0 -traceback 
