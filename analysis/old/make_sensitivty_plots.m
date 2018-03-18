@@ -85,12 +85,12 @@ for d = 1:Noutps
     figure(fignum); close(fignum); figure(fignum);
     set(gcf,'color','w','position',[1372         179        1913        1022])
     
-    % loop through sites
-    for s = 1:Nsites
+    % loop through model configurations (as subplots)
+    for c = 1:Nconfg
+        if c == 4 && d == 5; continue; end
         
-        % loop through model configurations (as subplots)
-        for c = 1:Nconfg
-            if c == 4 && d == 5; continue; end
+        % loop through sites
+        for s = 1:Nsites
             
             % grab data for this site and output
             Iy = find(all(squeeze(TSI(1:Nparms,1,d,s,:,c))<-9990));
