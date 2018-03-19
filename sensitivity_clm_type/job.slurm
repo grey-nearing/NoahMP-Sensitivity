@@ -3,7 +3,7 @@
 #SBATCH --job-name=clm1
 #SBATCH --output=slurm.report
 #SBATCH --time=12:00:00
-#SBATCH --ntasks=36
+#SBATCH --ntasks=56
 #SBATCH --account=s1688
 #SBATCH --constraint=hasw
 
@@ -21,10 +21,10 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/discover/nobackup/projects/lis/libs/net
 envVar="{'LD_LIBRARY_PATH': '$LD_LIBRARY_PATH'}"
 
 # location
-cd /discover/nobackup/gnearing/NoahMP_Sensitivity/sensitivity_clm_type 
+cd /discover/nobackup/gnearing/projects/NoahMP-Sensitivity/sensitivity_clm_type
 
 # pods
-/usr/local/other/PoDS/PoDS/pods.py -e " $envVar " -x /discover/nobackup/gnearing/NoahMP_Sensitivity/sensitivity_clm_type/execfile.pods -n 18
+/usr/local/other/PoDS/PoDS/pods.py -e " $envVar " -x /discover/nobackup/gnearing/projects/NoahMP-Sensitivity/sensitivity_clm_type/execfile.pods -n 16
 
 # done
 exit 0
