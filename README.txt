@@ -2,7 +2,7 @@ How To Run:
 
 1) Compile Noah-MP model:
 	1a) Need a ifort compiler. On NCCS Discover, this can be accessed by sourcing the <environment_setup.sh> file. Note that this purges all modules and changes $PATH.
-	1b) In the <model_src> sibdirectory run 'make clean' and 'make'.
+	1b) In the <model_src> subdirectory run 'make clean' and 'make'.
 
 2) In each of the <sensitivity_*> working directories do the following:
 	2a) Run the <run_init.m> MatLab script in the <sensitivity_*/initialize> subdirectory.
