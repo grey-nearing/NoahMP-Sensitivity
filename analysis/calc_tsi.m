@@ -4,10 +4,10 @@ restoredefaultpath; addpath(genpath(pwd));
 
 Nsites = 20;            % # sites
 Years  = 1999:2006;     % year range (not all sites have all years)
-Nsamps = 3000;          % # samples per site
+Nsamps = 2000;%3000;          % # samples per site
 Nparms = 49;            % # parameters for each model config
 Noutps = 5;             % # model output variables
-Nconfg = 4;             % # model configurations
+Nconfg = 1;             % # model configurations
 
 % initialize storage of the sensitivity indexes
 TTSI = zeros(Nparms,2,Noutps,Nsites,length(Years),Nconfg)-9999;
@@ -21,10 +21,10 @@ for s = 1:Nsites                  % loop through sites
             
             % match model config index with directory name
             switch c
-                case(1); mvar = 'noah_type';
-                case(2); mvar = 'clm_type';
-                case(3); mvar = 'ssib_type';
-                case(4); mvar = 'dveg3';
+%                case(1); mvar = 'noah_type';
+                case(1); mvar = 'clm_type';
+%                case(3); mvar = 'ssib_type';
+%                case(4); mvar = 'dveg3';
             end
             
             % try to load resutls for site/year

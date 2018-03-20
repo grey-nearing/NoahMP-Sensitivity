@@ -2,7 +2,7 @@
 
 minimumsize=99000000
 
-for f in $(find . -maxdepth 1 -type f)
+for f in $(find . -maxdepth 10 -type f)
 do 
 
  actualsize=$(wc -c <"$f")
