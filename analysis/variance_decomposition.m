@@ -14,7 +14,7 @@ Is = [];
 for s = 1:size(TTSI,4)
     data = squeeze(TTSI(:,:,:,s,:,:));
     data = data(:);
-    if length(find(~isnan(data))) > 0
+    if any(~isnan(data))
         Is = [Is;s];
     end
 end
