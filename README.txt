@@ -1,3 +1,6 @@
+Code repository for the paper: Parameter Sensitivity of the Noah-MP Land Surface Model with Dynamic Vegetation
+https://journals.ametsoc.org/doi/abs/10.1175/jhm-d-17-0205.1
+
 How To Run:
 
 1) Compile Noah-MP model:
